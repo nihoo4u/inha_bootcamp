@@ -1,9 +1,7 @@
-a=[1,2,3]
-b=a
-a[0]=100
-print(b)
+num1=int(input("input the number"))
+num2=int(input("input the number"))
+# q=num1//num2
+# r=num1%num2
 
-
-base_number=int(input('INput base number: '))
-exponent_number=int(input('INput exponent number: '))
-print(f'밑은 {base_number},"지수는 {exponent_number},결과값은 {base_number**exponent_number}')
+# print(f'몫은 {q}이고 나머지는 {r}입니다')
+print(f'몫은 {divmod(num1,num2)[0]}이고 나머지는 {divmod(num1,num2)[1]}입니다')
