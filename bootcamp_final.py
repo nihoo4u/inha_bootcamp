@@ -41,36 +41,36 @@ while True:
 
 
 
-#6.1
-# l=[3,2,1,0]
-# for i in l:
-#     print(i,end=' ')
+6.1
+l=[3,2,1,0]
+for i in l:
+    print(i,end=' ')
 
-#6.2
-# guess_me=7
-# number=1
-# while True:
-#     if number<guess_me:
-#         print('too low')
-#
-#     elif number==guess_me:
-#         print('found it')
-#         break
-#     else:
-#         print('Oops')
-#         break
-#     number+=1
-#
-# print(number)
+6.2
+guess_me=7
+number=1
+while True:
+    if number<guess_me:
+        print('too low')
 
-#6.3
-# guess_me=5
-# for number in range(10):
-#     if number<guess_me:
-#         print('too low')
-#     elif number==guess_me:
-#         print('found it')
-#         break
-#     else:
-#         print('Oops')
-#         break
+    elif number==guess_me:
+        print('found it')
+        break
+    else:
+        print('Oops')
+        break
+    number+=1
+
+print(number)
+
+6.3
+guess_me=5
+for number in range(10):
+    if number<guess_me:
+        print('too low')
+    elif number==guess_me:
+        print('found it')
+        break
+    else:
+        print('Oops')
+        break
