@@ -3,19 +3,18 @@ while True:
     if a=='q':
         print('terminate the calculator')
         break
-    threshold=0
+    if int(a)<=1:
+        print(f'{int(a)} is not a prime number ')
+        break
+    is_prime=True
     for i in range(2,int(a)):
 
         if int(a)%i==0:
-            print(f'{int(a)} is not a prime number ')
+            is_prime=False
+
             break
-        threshold+=1
-    if threshold==int(a)-2:
+    if is_prime:
         print(f'{int(a)} is a prime number')
-
-
-
-
-
-
+    else:
+        print(f'{int(a)}is not a prime number')
 
