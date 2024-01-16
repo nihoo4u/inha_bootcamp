@@ -1,11 +1,11 @@
 while True:
-    a=input()
+    a=input("input the number")
     if a=='q':
         print('terminate the calculator')
         break
     if int(a)<=1:
         print(f'{int(a)} is not a prime number ')
-        break
+        continue
     is_prime=True
     for i in range(2,int(a)):
 
@@ -17,4 +17,3 @@ while True:
         print(f'{int(a)} is a prime number')
     else:
         print(f'{int(a)}is not a prime number')
-
