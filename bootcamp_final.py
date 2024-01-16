@@ -41,12 +41,12 @@ while True:
 
 
 
-6.1
+# 6.1
 l=[3,2,1,0]
 for i in l:
     print(i,end=' ')
 
-6.2
+# 6.2
 guess_me=7
 number=1
 while True:
