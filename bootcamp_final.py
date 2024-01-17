@@ -1,31 +1,30 @@
-b=[]
-for i in range(1,6):
-    b.append(i**2)
-print(b)
+# a=[['a','b'],['c','d']] # list->dict
+# print(dict(a))
+#
+# b=['af','sd','df'] # str->dict
+# print(dict(b))
+
+# c={'a':"c",'b':'d'} #change,add
+# c['a']='sdfsdf'
+# c['c']='dfdfd'
+# print(c)
+#
+# print(c.get('a'))
 
 
+sugang=dict(subject='pytoon',db='kang',cpp='song')
+# for subject,professor in sugang.items():
+#     print(subject,professor)
 
-a=[x**2 for x in range(1,6)]
-print(a)
+for k in sugang:
+    print(k, end=' ')
+print()
+for k in sugang.values():
+    print(k, end=' ')
+print()
 
-a=[x for x in range(1,10) if x%2==1]
-print(a)
-
-a=["a","b","c"]
-b=[1,2,3]
-for x,y in zip(a,b):
-    print(f'{x} is {y}th memory')
-
-rows=range(1,4)
-cols=range(1,3)
-for row in rows:
-    for col in cols:
-        print((row,col))
-
-
-cells=[(rol,col) for rol in rows for col in cols]
-print(cells)
-
-for a,b in cells: #unpacking
-    print(a,b)
-
+for k in sugang.keys():
+    print(k, end=' ')
+print()
+for k in sugang.items():
+    print(k)
