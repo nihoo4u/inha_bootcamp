@@ -1,14 +1,18 @@
-#8.1
-e2f={'dog':'chien','cat':'cha','walrus':'mores'}
-#8.2
-print(e2f['walrus'])
-#8.3
-f2e=dict()
-for a,b in e2f.items():
-    f2e[b]=a
-print(f2e)
-#8.4
-print(e2f['dog'])
-#8.5
-print(*e2f.keys(),end=' ')
-#8.6
+def isprime(n)->bool():
+    if n<2:
+        return False
+    else:
+        i=2
+        while i*i<=n:
+            if n%i==0:
+                return False
+            i+=1
+        return True
+a,b=map(int,input().split())
+if a>b:
+    a,b=b,a
+for i in range(a,b):
+    if isprime(i):
+        print(f'{i} is a prime number')
+    else:
+        print(f'{i} is not a prime number')
