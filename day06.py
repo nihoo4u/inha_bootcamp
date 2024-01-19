@@ -76,11 +76,31 @@
 # squirtle=Pockemon('squirtle')
 # charizard.attack(squirtle)
 
-class Pokemon:
+# class Pokemon:
+#     def __init__(self,name):
+#         self.name=name
+# class Pikachu(Pokemon):
+#     pass
+#
+# p1=Pikachu('피카츄')
+# print(p1.name)
+# print(issubclass(Pikachu,Pokemon))
+
+
+class Person:
     def __init__(self,name):
         self.name=name
-class Pikachu(Pokemon):
-    pass
+class EmailPerson(Person):
+    def __init__(self,name,email):
 
-p1=Pikachu('피카추')
-print(p1.name)
+        super().__init__(name)
+        self.email=email
+
+
+a=Person('234234')
+print(a.name)
+bob=EmailPerson('a','sfs@')
+print(bob.name)
+print(bob.email)
+
+
