@@ -1,154 +1,129 @@
-# a=[1,2,3,4]
-# print(a)
-# print(id(a))
-# def change_it():
-#     a[0]=2
-#     print(a)
-#     print(id(a))
-#
-#
-# change_it()
-# print(a)
-# print(id(a))
+##direct access
+class Pockemon:
+    def __init__(self,name):
+        self.name=name
+    def getter(self):
+        return self.name
+class Pika(Pockemon):
+    pass
+#__init__이용해 직접 할당하는 방법 (direct access)
+direct_access=Pockemon('Pika')
+print(direct_access.name)
+print(direct_access.getter())
 
-# a=2
-# print(a)
-# print(id(a))
-# def change_it():
-#     a=3
-#     print(a)
-#     print(id(a))
-#
-#
-# change_it()
-# print(a)
-# print(id(a))
-# b=3
-# print(b)
-# print(id(b))
-# def change_int():
-#     global b
-#     b=2
-#     print(id(b))
-#
-# change_int()
-# print(b)
-
-
-# def test(f): #decorator
-#     def func(*args,**kwargs):
-#         print('start')
-#         f(2)
-#         print('end')
-#     return func
-#
-# @test
-# def gogo(x):
-#     for i in range(x):
-#         print(i)
-
-# start_func=test(gogo)
-# start_func()
-
-# gogo()
+##direct_access 객체의 속성이 direct한 방법,getter을 이용해서 name을 불러모으고 있다
+direct_access.name='2'
+print(direct_access.getter())
 
 
 
-# def iam():
-#     print(2)
-#
-# print(iam.__name__)
+# getter,setter,method1_using property
+class Duck:
+    def __init__(self,input_name):
+        self.__hiddenname=input_name
+    def get_name(self):
+        print(f"get name which is {self.__hiddenname}")
+        return self.__hiddenname
+    def set_name(self,input_name):
+        print(f"set name from {self.__hiddenname} to {input_name}")
+        self.__hiddenname=input_name
+    # name=property(get_name,set_name) #property가 함수이므로 객체.name으로 불러올 수 있다
 
-#
-# short_list=[1,2,3]
-# position=5
-# try:
-#     print(short_list[position])
-# except:
-#     print('it is hard to go..')
-
-
-###
-# import random
-# numbers=[random.randint(1,5)]
-# class OopsException(Exception):
-#     pass
-#
-# try:
-#     pick = int(input())
-#     print(numbers[pick])
-
-# class Pockemon():
-#     # pass
-#     def __init__(self,name,):
-#         self.name=name
-#         print(f" add {name} pocketmon")
-#     def attack(self,target):
-#         print(f'{self.name}이 {target.name}을 공격')
-# charizard=Pockemon('lizamong')
-# pikachu=Pockemon('pikachu')
-# squirtle=Pockemon('squirtle')
-# charizard.attack(squirtle)
-
-# class Pokemon:
-#     def __init__(self,name):
-#         self.name=name
-# class Pikachu(Pokemon):
-#     pass
-#
-# p1=Pikachu('피카츄')
-# print(p1.name)
-# print(issubclass(Pikachu,Pokemon))
+class Duckbaby(Duck):
+    pass
 
 
+before using property
+print(a.name)
+print(a.get_name())
+a.set_name('PNY')
+print(a.get_name())
+print(a.name)
 
-# class Animal:
-#     def says(self):
-#         return
-# class Hores(Animal):
-#     def says(self):
+#after using property
+print(a.name)
+a.name='43543'
+print(a.name)
 
-###질
-# class Cat:
-#     def __init__(self,name):
-#         self.name=name
-#     def surname(self,surname):
-        # self.surname=surname
 
-# a_cat=Cat('go')
-# print(a_cat.name)
-# print(a_cat.surname('df'))
+# getter,setter,method2_using property
+#원래부터 속성 또한 잘 가져와쓸 수 있었지만 property와 name.setter을 통해 a.name=2 이런 식이 가능해졌다
+class Duck:
+    def __init__(self,input_name):
+        self.hiddenname=input_name
+    @property #property를 getter 위에
+    def name(self):
+        print(f"get name which is {self.hiddenname}")
+        return self.hiddenname
+    @name.setter #getter이름.setter
+    def name(self,input_name):
+        print(f"set name from {self.hiddenname} to {input_name}")
+        self.hiddenname=input_name
 
-# class FlyingMixin:
-#     def fly(self):
-#         return f"{self.name} is flying"
-# class SwimmingMixin:
-#     def swim(self):
-#         return f"{self.name} is swimming"
-#
-#
-# class Pokemon:
-#     def __init__(self,input_name):
-#         self.hidden_name=input_name
-#     def attack(self):
-#         return "공격"
-#     def get_name(self):
-#         print('inside getter')
-#         return self.hidden_name
-#
-#     def set_name(self,input_name):
-#         print('inside setter')
-#         self.hidden_name=input_name
-#
-#     name = property(get_name, set_name)
-#
-# class Charizard(Pokemon,FlyingMixin):
-#     pass
-# class Gayarados(Pokemon,SwimmingMixin):
-#     pass
-#
-# g1=Gayarados('Gayrados')
-# c1=Charizard('Charizard')
+
+class Duckbaby(Duck):
+    pass
+
+a=Duck('PJY')
+print(a.name)
+a.name='Keung'
+print(a.name)
+
+# calculatign property
+class Circle:
+    def __init__(self,radius):
+        self.radius=radius
+    @property
+    def diameter(self):
+        return 2*self.radius
+a=Circle(6)
+print(a.radius)
+# print(a.diameter())
+print(a.diameter)
+
+
+
+#a.b b에 메서드뿐만 아니라 속성도 올 수 있다.
+class Wonder:
+    def __init__(self,x):
+        self.variable=x
+    def findit(self,x):
+        return x**2
+    num=1
+a=Wonder(3)
+print(a.num)
+print(a.findit(3))
+print(a.variable)
+
+
+
+name mangling #바로 위 소스코드처럼 속성에 대해서도 찾을 수가 있는데 언더바 두번 넣으면 바로 찾을 수 없
+class Duck:
+    def __init__(self,input_name):
+        self.__hiddenname=input_name
+    @property #property를 getter 위에
+    def name(self):
+        print(f"get name which is {self.__hiddenname}")
+        return self.__hiddenname
+    @name.setter #getter이름.setter
+    def name(self,input_name):
+        print(f"set name from {self.__hiddenname} to {input_name}")
+        self.__hiddenname=input_name
+
+
+
+class Duckbaby(Duck):
+    pass
+
+a=Duck('PJY')
+print(a.name)
+a.name='Keung'
+print(a.name)
+print(a.k)
+
+
+
+
 
 
 
