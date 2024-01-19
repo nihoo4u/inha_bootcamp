@@ -1,7 +1,9 @@
 # a=[1,2,3,4]
 # print(a)
+# print(id(a))
 # def change_it():
 #     a[0]=2
+#     print(a)
 #     print(id(a))
 #
 #
@@ -9,6 +11,18 @@
 # print(a)
 # print(id(a))
 
+# a=2
+# print(a)
+# print(id(a))
+# def change_it():
+#     a=3
+#     print(a)
+#     print(id(a))
+#
+#
+# change_it()
+# print(a)
+# print(id(a))
 # b=3
 # print(b)
 # print(id(b))
@@ -87,20 +101,54 @@
 # print(issubclass(Pikachu,Pokemon))
 
 
-class Person:
-    def __init__(self,name):
-        self.name=name
-class EmailPerson(Person):
-    def __init__(self,name,email):
 
-        super().__init__(name)
-        self.email=email
+# class Animal:
+#     def says(self):
+#         return
+# class Hores(Animal):
+#     def says(self):
 
+###질
+# class Cat:
+#     def __init__(self,name):
+#         self.name=name
+#     def surname(self,surname):
+        # self.surname=surname
 
-a=Person('234234')
-print(a.name)
-bob=EmailPerson('a','sfs@')
-print(bob.name)
-print(bob.email)
+# a_cat=Cat('go')
+# print(a_cat.name)
+# print(a_cat.surname('df'))
+
+# class FlyingMixin:
+#     def fly(self):
+#         return f"{self.name} is flying"
+# class SwimmingMixin:
+#     def swim(self):
+#         return f"{self.name} is swimming"
+#
+#
+# class Pokemon:
+#     def __init__(self,input_name):
+#         self.hidden_name=input_name
+#     def attack(self):
+#         return "공격"
+#     def get_name(self):
+#         print('inside getter')
+#         return self.hidden_name
+#
+#     def set_name(self,input_name):
+#         print('inside setter')
+#         self.hidden_name=input_name
+#
+#     name = property(get_name, set_name)
+#
+# class Charizard(Pokemon,FlyingMixin):
+#     pass
+# class Gayarados(Pokemon,SwimmingMixin):
+#     pass
+#
+# g1=Gayarados('Gayrados')
+# c1=Charizard('Charizard')
+
 
 
